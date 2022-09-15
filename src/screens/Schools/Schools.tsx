@@ -23,7 +23,7 @@ const Schools = () => {
 
   return (
     <View style={styles.container}>
-      <SchoolList data={data} />
+      <SchoolList data={data} fetching={fetching} error={error} />
     </View>
   );
 };

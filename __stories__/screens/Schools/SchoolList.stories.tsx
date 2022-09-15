@@ -16,8 +16,28 @@ const Template: ComponentStory<typeof SchoolList> = args => (
   <SchoolList {...args} />
 );
 
-export const List: ComponentStory<typeof SchoolList> = Template.bind({});
+export const ListWithData: ComponentStory<typeof SchoolList> = Template.bind(
+  {},
+);
 
-List.args = {
+ListWithData.args = {
   data: [schoolData],
+};
+
+export const ListWithError: ComponentStory<typeof SchoolList> = Template.bind(
+  {},
+);
+
+ListWithError.args = {
+  data: [],
+  error: true,
+};
+
+export const FetchingList: ComponentStory<typeof SchoolList> = Template.bind(
+  {},
+);
+
+FetchingList.args = {
+  data: [],
+  fetching: true,
 };
