@@ -6,6 +6,8 @@ import {Provider} from 'react-redux';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import NavigationRouter from './navigators/NavigationRouter';
 import store from './redux/store';
+import {ENABLE_STORYBOOK} from './config/storybook';
+import StorybookUIRoot from '@/.ondevice/Storybook';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -30,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default ENABLE_STORYBOOK ? StorybookUIRoot : App;

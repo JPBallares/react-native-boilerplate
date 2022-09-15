@@ -1,8 +1,8 @@
 import React from 'react';
 import {ListItem, Avatar, Icon, Text} from '@rneui/themed';
 import {StyleSheet, View} from 'react-native';
-import {School} from '../types/School';
-import {generateAvatar} from '../utils/avatar';
+import {School} from '../../../types/School';
+import {generateAvatar} from '../../../utils/avatar';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export type SchoolItemProps = {
@@ -26,16 +26,12 @@ const SchoolItem = ({school, onPress}: SchoolItemProps) => (
       <ListItem.Title style={styles.title}>{school.name}</ListItem.Title>
       <View style={styles.subtitleContainer}>
         <Icon name="map-pin" type="feather" />
-        <ListItem.Subtitle style={styles.subtitle}>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>{school.address}</Text>
-          </View>
-          <View style={styles.textContainer}>
-            <Text style={styles.text}>
-              {school.city}, {school.state} {school.zip}
-            </Text>
-          </View>
-        </ListItem.Subtitle>
+        <View style={styles.textContainer}>
+          {school.address && <Text>{school.address}</Text>}
+          <Text>
+            {school.city}, {school.state} {school.zip}
+          </Text>
+        </View>
       </View>
     </ListItem.Content>
   </ListItem>
@@ -56,20 +52,11 @@ const styles = StyleSheet.create({
   subtitleContainer: {
     flex: 1,
     flexDirection: 'row',
-  },
-  subtitle: {
-    marginLeft: 10,
-    flex: 1,
-    flexDirection: 'column',
-    flexShrink: 1,
+    padding: 5,
   },
   textContainer: {
-    flexDirection: 'row',
-  },
-  text: {
-    // flexShrink: 1,
-    flexWrap: 'wrap',
     flex: 1,
+    marginLeft: 10,
   },
 });
 

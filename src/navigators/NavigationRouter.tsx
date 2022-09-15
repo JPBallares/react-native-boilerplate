@@ -6,7 +6,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import Home from '@/src/screens/Home';
 import Login from '@/src/screens/Login';
-import Schools from '@/src/screens/Schools';
+import Schools from '@/src/screens/Schools/Schools';
 
 // import {BackButton} from './NavItems';
 // import styles from './styles';
